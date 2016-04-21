@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: kn/2cGLtER7Fg5czhOvR0jiRRWb1+cfT9X/r5VKtOpzVeE+WVYF0mZR9hY2wne3vRbzut7YOVC3N9BlUAhZ5v4BlLONVEUKbAaoDVaf3QuTJUrElH7FLB28lr7d+o7cLToLvYwRKmAXCBgwyq3dqi4dw57Jn7xdPxD+epIYUZSzu829r7PjfJxwIMpS+k9GhfJGZftc9TmSwr21LV8Ltoa55Jd8t+txR1dq+UDZl44vYDqZHtcsNoBvl6xGWdommYlfQS6bdYrZuwSYpCm/5Rh7Lw0oGNf+zjpkcbiQbm6VwbvcJ+fSGlFV53b8oR7RyZNAlWhWSSXRcEgHrrS1HIIR94p7ZHLdnP+IgZhDUUvSiQ21QufpMP8QL7k1+xe98oDKGYTgkMvOYAMNxobQjiiKoYo2siOYY2AL8e3qnUmcXy4rlmyP5Y3lEuZg4VtqAxRrPM2iaITdXuZIZmB3skQh08PIJ6JISDhrV1pCAuckU7UoqX9Nx+aR1vgqBdVRPJ9TKmSX1Kbaxzwd+UgjVCkfzSq9Jp+mhYkk93Bz0yHv98l1nQwS2t2Vzr5/8TwjwwmS8zhAdb6LjMh0nYiRqqNoPBuDSjYWXhXGV/xwEBy2v2xDAbZfno/a6DFECLvMtOCzrOai5Se54iWPzPiutkCimbqv/+Btr2ywIBcO/V/8=
+  app: peepchat-dgiunta-charleskirk
+  on:
+    repo: charleskirk/peepchat-dgiunta-charleskirk
